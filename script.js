@@ -1,35 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // スクロール時のアニメーション処理（Intersection Observer）
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    /* ---------- Scroll reveal for .day cards ---------- */
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // 一度表示されたら監視を終了する場合は以下をコメントアウト解除
-                // observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.12 });
 
-    // .day-cardクラスを持つ要素を監視
-    document.querySelectorAll('.day-card').forEach(card => {
-        observer.observe(card);
-    });
+    document.querySelectorAll('.day').forEach(el => observer.observe(el));
 
-    // ヒーロー背景のパララックス効果
+    /* ---------- Hero parallax ---------- */
     const heroBg = document.querySelector('.hero-bg');
     if (heroBg) {
         window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            if (scrollY < window.innerHeight) {
-                // スクロール量に応じて背景を下方向にずらす（パララックス）
-                heroBg.style.transform = `scale(1.05) translateY(${scrollY * 0.3}px)`;
+            const y = window.scrollY;
+            if (y < window.innerHeight) {
+                heroBg.style.transform = `scale(1.08) translateY(${y * 0.25}px)`;
             }
-        });
+        }, { passive: true });
+    }
+
+    /* ---------- Navbar-like header shrink (optional) ---------- */
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        window.addEventListener('scroll', () => {
+            hero.classList.toggle('scrolled', window.scrollY > 80);
+        }, { passive: true });
     }
 });
