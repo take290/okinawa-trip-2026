@@ -1,22 +1,30 @@
 :root {
     /* Color Palette - Vibrant Dark Mode */
-    --bg-primary: #0f172a; /* Slate 900 */
-    --bg-secondary: #1e293b; /* Slate 800 */
-    --accent-primary: #0ea5e9; /* Sky 500 */
-    --accent-secondary: #f43f5e; /* Rose 500 */
-    --accent-tertiary: #f59e0b; /* Amber 500 */
-    
-    --text-primary: #f8fafc; /* Slate 50 */
-    --text-secondary: #cbd5e1; /* Slate 300 */
-    --text-muted: #94a3b8; /* Slate 400 */
-    
+    --bg-primary: #0f172a;
+    /* Slate 900 */
+    --bg-secondary: #1e293b;
+    /* Slate 800 */
+    --accent-primary: #0ea5e9;
+    /* Sky 500 */
+    --accent-secondary: #f43f5e;
+    /* Rose 500 */
+    --accent-tertiary: #f59e0b;
+    /* Amber 500 */
+
+    --text-primary: #f8fafc;
+    /* Slate 50 */
+    --text-secondary: #cbd5e1;
+    /* Slate 300 */
+    --text-muted: #94a3b8;
+    /* Slate 400 */
+
     --glass-bg: rgba(30, 41, 59, 0.6);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    
+
     /* Typography */
     --font-sans: 'Inter', 'Noto Sans JP', sans-serif;
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease-out;
     --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -42,7 +50,10 @@ body {
 }
 
 /* Typography Utilities */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     line-height: 1.2;
     font-weight: 700;
 }
@@ -132,7 +143,7 @@ ul {
     font-weight: 900;
     letter-spacing: -0.02em;
     margin-bottom: 1rem;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .hero-title span {
@@ -194,7 +205,7 @@ ul {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     border-color: rgba(14, 165, 233, 0.3);
 }
 
@@ -304,7 +315,7 @@ ul {
         flex-direction: row;
         align-items: stretch;
     }
-    
+
     .day-card:nth-child(even) {
         flex-direction: row-reverse;
     }
@@ -338,6 +349,7 @@ ul {
     .day-card:nth-child(odd) .day-image::after {
         background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.9));
     }
+
     .day-card:nth-child(even) .day-image::after {
         background: linear-gradient(to left, transparent, rgba(15, 23, 42, 0.9));
     }
@@ -356,6 +368,7 @@ ul {
         border-top: none;
         border-left: 1px solid var(--glass-border);
     }
+
     .day-card:nth-child(even) .day-info {
         border-left: none;
         border-right: 1px solid var(--glass-border);
@@ -384,6 +397,20 @@ ul {
     font-size: 0.875rem;
     font-weight: 600;
     border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.accommodation-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 8px;
+    color: var(--text-secondary);
+}
+
+.accommodation-badge strong {
+    color: var(--accent-tertiary);
 }
 
 .description {
@@ -459,6 +486,7 @@ ul {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -466,12 +494,19 @@ ul {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translate(-50%, 0);
     }
+
     40% {
         transform: translate(-50%, -10px);
     }
+
     60% {
         transform: translate(-50%, -5px);
     }
