@@ -100,6 +100,7 @@ ul {
 .hero {
     position: relative;
     height: 100vh;
+    min-height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,7 +135,7 @@ ul {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 5rem 1.5rem;
     animation: fadeInDown 1s ease-out forwards;
 }
 
